@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
     <title>Admin login</title>
 </head>
-<body >
-    <form  method="POST">
+<body class="bg-light" >
+    <form method="POST" class="container shadow text-center mt-5 bg-transparent p-5">
         <dl>
-            {{render_field(form.email,class='input-login')}}
-            {{render_field(form.password,class='input-login')}}
+            {{render_field(form.email,class='form-control col-4 offset-4')}}
+            {{render_field(form.password,class='form-control col-4 offset-4')}}
         </dl>
-        <button type="submit">LOGIN</button>
+        <button type="submit" class="btn btn-success">LOGIN</button>
     </form>
 </body>
 </html>
