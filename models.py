@@ -8,7 +8,7 @@ class User(db.Model,UserMixin):
     lastname = db.Column(db.String,nullable=False)
     email = db.Column(db.String,nullable=False)
     telephone = db.Column(db.String,nullable=False) 
-    dob = db.Column(db.Date,nullable=False)
+    dob = db.Column(db.Date,nullable=True)
     teacher = db.Column(db.Boolean,nullable=False,default=False)
     student = db.Column(db.Boolean,nullable=False,default=False)
     admno = db.Column(db.String,nullable=True)
@@ -39,4 +39,11 @@ class User(db.Model,UserMixin):
         self.admin=True
 
     def __repr__(self):
-        return "User {} {}".format(self.firstname,self.lastname)
+        return "<User {} {}>".format(self.firstname,self.lastname)
+
+class Subject(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String,nullable=False)
+
+    def __repr__(self):
+        return "<subject %r>" %self.name
